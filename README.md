@@ -2,6 +2,7 @@
 A DaVinci Resolve fuse plugin used for syncing animations to a midi file by automatically changing it's speed to fit between midi notes.
 
 ![Example Video](Examples/Demo1.mp4)
+![Example Image](Examples/DemoImage.jpg)
 
 ## Installation 
 
