@@ -43,7 +43,7 @@ Cakewalk <br />
 Reaper <br />
 FL Studio <br />
 ##### Exports Midi with tempo: <br />
-bitwig
+bitwig <br />
 Beepbox
 
 ### Animation setup
