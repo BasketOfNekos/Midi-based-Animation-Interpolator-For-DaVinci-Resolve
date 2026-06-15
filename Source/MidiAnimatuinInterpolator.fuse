@@ -177,6 +177,7 @@ function Create()
         BTNCS_Execute = [[
         local projectManager = resolve:GetProjectManager()
         local project = projectManager:GetCurrentProject()
+
         local timeline = project:GetCurrentTimeline()
         local projectFrameRate = timeline:GetSetting("timelineFrameRate")
         local projectLength = timeline:GetEndFrame() - timeline:GetStartFrame()
@@ -185,13 +186,11 @@ function Create()
         local itemlength = item:GetDuration()
         local itemStart = item:GetStart()
         local itemEnd = item:GetEnd()
-        -- local itemMarkers = item:GetMarkers()
-        -- local itemFlags = item:GetFlagList()
 
-        print("ProjectFrameRate ", projectFrameRate, "projectLength", projectLength, "itemLength", itemlength)
-        -- tool.FrameRate = projectFrameRate
+        print("ProjectFrameRate ", projectFrameRate, " projectLength ", projectLength, " itemLength ", itemlength, " TrackStart ", itemStart - 3600 * projectFrameRate)
+        tool.FrameRate = projectFrameRate
         tool.TrackLength = itemlength
-        -- tool.TrackStart = itemStart - 3600 * projectFrameRate -- Because DaVinci starts an hour in
+        tool.TrackStart = itemStart - 3600 * projectFrameRate -- Because DaVinci starts an hour in
         ]],
     })
 
@@ -204,7 +203,7 @@ function Create()
         INP_DoNotifyChanged = true,
         INP_Integer = true,
         INP_MinScale = 0.0,
-        INP_Default = 60,
+        INP_Default = 120,
     })
 
 --- @UI Track Length (Frames):
@@ -219,7 +218,7 @@ function Create()
     })
 
 -- WARNING: Not working properly, behavior may break in a future update
-    InTrackStart = self:AddInput("[Warning] Track Start (Frames)", "TrackStart", {
+    InTrackStart = self:AddInput("Track Start (Frames)", "TrackStart", {
         LINKID_DataType = "Number",
         INPID_InputControl = "ScrewControl",
         INP_DoNotifyChanged = true,
