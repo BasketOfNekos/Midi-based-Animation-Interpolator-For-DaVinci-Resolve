@@ -1,3 +1,6 @@
+# No longer reccomended
+Check out https://github.com/BasketOfNekos/DaVinci-Resolve-Animation-Sync-Script
+
 # Midi-based-Animation-Interpolator-For-DaVinci-Resolve
 A DaVinci Resolve fuse plugin used for syncing animations to a midi file by automatically changing it's speed to fit between midi notes.
 
